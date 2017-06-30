@@ -2,7 +2,7 @@ require 'spec_helper'
 
 RSpec.describe RSpec::Puppet::Facts::Unsupported do
   describe '::VERSION' do
-    let(:version) { Puppet::Examples::Helpers::VERSION }
+    let(:version) { described_class::VERSION }
     context 'as String' do
       subject { version }
       it { is_expected.not_to be nil }
