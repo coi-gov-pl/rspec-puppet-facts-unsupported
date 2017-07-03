@@ -2,11 +2,11 @@
 
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'rspec/puppet/facts/unsupported/version'
+require 'rspec-puppet-facts-unsupported/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'rspec-puppet-facts-unsupported'
-  spec.version       = RSpec::Puppet::Facts::Unsupported::VERSION
+  spec.version       = RspecPuppetFactsUnsupported::VERSION
   spec.authors       = ['Suszyński Krzysztof']
   spec.email         = ['krzysztof.suszynski@coi.gov.pl']
 

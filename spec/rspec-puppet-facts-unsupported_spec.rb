@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe RSpec::Puppet::Facts::Unsupported do
+RSpec.describe RspecPuppetFactsUnsupported do
   describe '::VERSION' do
     let(:version) { described_class::VERSION }
     context 'as String' do

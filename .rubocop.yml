@@ -13,6 +13,8 @@ Style/FileName:
     - 'Gemfile'
     - 'Rakefile'
     - '*.gemspec'
+    - lib/rspec-puppet-facts-unsupported.rb
+    - spec/rspec-puppet-facts-unsupported_spec.rb
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*_spec.rb'

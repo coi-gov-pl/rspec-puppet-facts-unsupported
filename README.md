@@ -1,4 +1,4 @@
-# Puppet::Examples::Helpers
+# RspecPuppetFactsUnsupported
 
 [![Build Status](https://travis-ci.org/coi-gov-pl/rspec-puppet-facts-unsupported.svg?branch=develop)](https://travis-ci.org/coi-gov-pl/rspec-puppet-facts-unsupported)
 
@@ -36,11 +36,16 @@ Or install it yourself as:
 
 ## Usage
 
+### Simple example (random, unsupported os - facts pair)
+
 ```ruby
 # in rspec-puppet test
 require 'spec_helper'
+require 'rspec-puppet-facts-unsupported'
 
 describe '::vagrant', type: :class do
+  include RspecPuppetFactsUnsupported
+
   on_unsupported_os.first(2).to_h.each do |os, facts|
     context "on #{os}" do
       let(:facts) { facts }
