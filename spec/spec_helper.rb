@@ -14,7 +14,8 @@ end
 require 'pry' if gem_present 'pry'
 
 require 'bundler/setup'
-require 'rspec/puppet/facts/unsupported'
+require 'rspec/collection_matchers'
+require 'rspec-puppet-facts-unsupported'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

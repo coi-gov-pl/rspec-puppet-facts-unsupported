@@ -1,0 +1,12 @@
+{
+  "name": "this-is-not-a-puppet-module",
+  "version": "999999999.0.0",
+  "author": "coi",
+  "summary": "Not a module, used just to verify RspecPuppetFactsUnsupported.on_unsupported_os method",
+  "license": "Apache-2.0",
+  "operatingsystem_support": [
+    { "operatingsystem": "Ubuntu", "operatingsystemrelease": [ "14.04", "16.04" ] },
+    { "operatingsystem": "CentOS", "operatingsystemrelease": [ "6", "7" ] },
+    { "operatingsystem": "OracleLinux" }
+  ]
+}

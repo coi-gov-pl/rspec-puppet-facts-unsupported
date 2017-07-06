@@ -1,12 +1,12 @@
 require 'spec_helper'
 
-RSpec.describe RSpec::Puppet::Facts::Unsupported do
+RSpec.describe RspecPuppetFactsUnsupported do
   describe '::VERSION' do
     let(:version) { described_class::VERSION }
     context 'as String' do
       subject { version }
       it { is_expected.not_to be nil }
-      it { is_expected.to match(/^v?[0-9]+(.[0-9]+)*$/) }
+      it { is_expected.to match(/^v?[0-9]+(.[0-9]+)*(\.[a-z0-9]+)?$/) }
     end
     context 'as Gem::Version' do
       let(:req) { Gem::Requirement.new('~> 0') }
