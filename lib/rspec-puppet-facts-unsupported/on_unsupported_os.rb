@@ -92,7 +92,7 @@ module RspecPuppetFactsUnsupported
     SHORT_MAX = 2**16
 
     def randomize_seed
-      @seed = Random.new.rand(0..SHORT_MAX)
+      self.seed = Random.new.rand(0..SHORT_MAX)
     end
 
     def seed=(seed)

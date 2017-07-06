@@ -21,6 +21,7 @@ RSpec.shared_examples "it doesn't contain supported OS's described in metadata.j
   it { is_expected.not_to contain_os('centos-7-x86_64') }
   it { is_expected.not_to contain_os('ubuntu-14.04-x86_64') }
   it { is_expected.not_to contain_os('ubuntu-16.04-x86_64') }
+  it { is_expected.not_to contain_os(/^oraclelinux-/) }
 end
 
 RSpec.describe 'RspecPuppetFactsUnsupported#on_unsupported_os' do
@@ -40,8 +41,15 @@ RSpec.describe 'RspecPuppetFactsUnsupported#on_unsupported_os' do
       let(:opts) { { order: 11_111 } }
       it { is_expected.to be_a Hash }
       it { is_expected.to have_at_least(2).items }
-      describe 'first returned operating system\'s facts' do
-        it { expect(Hash[*subject.first]).to contain_os('redhat-6-x86_64') }
+      describe 'first returned operating system\'s facts should be the same each time' do
+        it {
+          firsttime = Hash[*target.on_unsupported_os(opts).first]
+          secondtime = Hash[*target.on_unsupported_os(opts).first]
+          os = firsttime.keys.first
+
+          expect(firsttime).to contain_os(os)
+          expect(secondtime).to contain_os(os)
+        }
       end
       context 'with verbose => true' do
         before(:each) { RspecPuppetFactsUnsupported.verbose = true }
@@ -69,7 +77,7 @@ RSpec.describe 'RspecPuppetFactsUnsupported#on_unsupported_os' do
         it {
           firsttime = Hash[*target.on_unsupported_os(opts).first]
           secondtime = Hash[*target.on_unsupported_os(opts).first]
-          os = 'fedora-23-x86_64'
+          os = firsttime.keys.first
 
           expect(firsttime).to contain_os(os)
           expect(secondtime).to contain_os(os)
