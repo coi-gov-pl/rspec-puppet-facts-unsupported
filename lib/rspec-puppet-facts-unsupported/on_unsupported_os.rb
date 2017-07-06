@@ -76,10 +76,11 @@ module RspecPuppetFactsUnsupported
       ilike = Integerlike.new(ordervalue)
       self.seed = ilike.to_i if ilike.integer?
       @order = ordervalue
+      @repetitive_random = Random.new(42)
     end
 
     def get
-      @randomizer
+      should_randomize? ? @randomizer : @repetitive_random
     end
 
     def should_randomize?
@@ -257,7 +258,8 @@ module RspecPuppetFactsUnsupported
     def shuffle_and_limit(os_facts_hash)
       randomizer = @opts[:randomizer]
       as_array = os_facts_hash.to_a
-      as_array = as_array.shuffle(random: randomizer.get) if randomizer.should_randomize?
+      as_array = as_array.sort_by { |os, _| os }
+      as_array = as_array.shuffle(random: randomizer.get)
       as_array = as_array[0..@opts[:limit]]
       Hash[*as_array.flatten]
     end
