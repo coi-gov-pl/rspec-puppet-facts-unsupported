@@ -6,7 +6,7 @@ RSpec.describe RspecPuppetFactsUnsupported do
     context 'as String' do
       subject { version }
       it { is_expected.not_to be nil }
-      it { is_expected.to match(/^v?[0-9]+(.[0-9]+)*$/) }
+      it { is_expected.to match(/^v?[0-9]+(.[0-9]+)*(\.[a-z0-9]+)?$/) }
     end
     context 'as Gem::Version' do
       let(:req) { Gem::Requirement.new('~> 0') }
