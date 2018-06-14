@@ -1,6 +1,6 @@
 # RspecPuppetFactsUnsupported
 
-[![Build Status](https://travis-ci.org/coi-gov-pl/rspec-puppet-facts-unsupported.svg?branch=develop)](https://travis-ci.org/coi-gov-pl/rspec-puppet-facts-unsupported)
+[![Build Status](https://travis-ci.org/coi-gov-pl/rspec-puppet-facts-unsupported.svg?branch=develop)](https://travis-ci.org/coi-gov-pl/rspec-puppet-facts-unsupported) [![Gem](https://img.shields.io/gem/v/rspec-puppet-facts-unsupported.svg)](https://rubygems.org/gems/rspec-puppet-facts-unsupported)
 
 Helpers to generate unsupported OS facts to test for proper fail.
 
