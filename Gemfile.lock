@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rspec-puppet-facts-unsupported (0.1.1.pre)
+    rspec-puppet-facts-unsupported (0.1.1)
       rspec-puppet-facts (~> 1)
 
 GEM

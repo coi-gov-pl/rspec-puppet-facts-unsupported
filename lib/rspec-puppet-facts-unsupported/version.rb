@@ -1,3 +1,3 @@
 module RspecPuppetFactsUnsupported
-  VERSION = '0.1.1.pre'.freeze
+  VERSION = '0.1.1'.freeze
 end
