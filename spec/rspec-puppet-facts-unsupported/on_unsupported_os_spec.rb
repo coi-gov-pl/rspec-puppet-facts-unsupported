@@ -90,7 +90,7 @@ RSpec.describe 'RspecPuppetFactsUnsupported#on_unsupported_os' do
   context 'with :limit opt set to 100' do
     let(:opts) { { limit: 100 } }
     it { is_expected.to be_a Hash }
-    it { is_expected.to have_at_least(25).items }
+    it { is_expected.to have_at_least(20).items }
     it { is_expected.to contain_os('scientific-7-x86_64') }
     it { is_expected.to contain_os('redhat-6-x86_64') }
     it { is_expected.to contain_os('debian-8-x86_64') }
