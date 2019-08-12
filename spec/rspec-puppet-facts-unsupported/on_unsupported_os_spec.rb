@@ -128,3 +128,14 @@ RSpec.describe 'RspecPuppetFactsUnsupported#on_unsupported_os' do
     it_behaves_like "it doesn't contain supported OS's described in metadata.json"
   end
 end
+
+RSpec.describe RspecPuppetFactsUnsupported::UnsupportedFilteringOperation do
+  describe '#describe_os' do
+    context 'with no facts[:operatingsystem]' do
+      let(:klass) { RspecPuppetFactsUnsupported::UnsupportedFilteringOperation.new({}, {}) }
+      subject { klass.send(:describe_os, operatingsystemmajrelease: '4', hardwaremodel: 'x86_64') }
+
+      it { is_expected.to eq 'unknown-4-x86_64' }
+    end
+  end
+end
