@@ -265,7 +265,8 @@ module RspecPuppetFactsUnsupported
     end
 
     def describe_os(facts)
-      "#{facts[:operatingsystem].downcase}-" \
+      os = facts[:operatingsystem] ? facts[:operatingsystem].downcase : 'unknown'
+      "#{os}-" \
         "#{facts[:operatingsystemmajrelease]}-" \
         "#{facts[:hardwaremodel]}"
     end
