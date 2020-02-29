@@ -16,7 +16,7 @@ end
 group :development do
   gem 'bundler', '~> 1',                  require: false
   gem 'pry-byebug', '~> 3.4', '>= 3.4.2', require: false if req('>= 2.0') =~ RVERSION
-  gem 'rake', '~> 10',                    require: false
+  gem 'rake', '~> 13',                    require: false
 end
 
 # Specify your gem's dependencies in rspec-puppet-facts-unsupported.gemspec
