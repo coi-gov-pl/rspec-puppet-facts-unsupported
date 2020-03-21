@@ -10,7 +10,7 @@ group :test do
   gem 'rspec', '~> 3',                     require: false
   gem 'rspec-collection_matchers', '~> 1', require: false
   gem 'rubocop', '< 0.50',                 require: false if req('>= 2.0') =~ RVERSION
-  gem 'simplecov', '~> 0',                 require: false
+  gem 'simplecov', '~> 0', '>= 0.16.1', require: false
 end
 
 group :development do
