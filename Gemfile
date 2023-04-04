@@ -9,14 +9,14 @@ end
 group :test do
   gem 'rspec', '~> 3',                     require: false
   gem 'rspec-collection_matchers', '~> 1', require: false
-  gem 'rubocop', '< 0.50',                 require: false if req('>= 2.0') =~ RVERSION
-  gem 'simplecov', '~> 0',                 require: false
+  gem 'rubocop', '>= 0.49.1', '< 0.50', require: false if req('>= 2.0') =~ RVERSION
+  gem 'simplecov', '~> 0', '>= 0.16.1', require: false
 end
 
 group :development do
   gem 'bundler', '~> 1',                  require: false
   gem 'pry-byebug', '~> 3.4', '>= 3.4.2', require: false if req('>= 2.0') =~ RVERSION
-  gem 'rake', '~> 10',                    require: false
+  gem 'rake', '~> 12', '>= 12.3.3', require: false
 end
 
 # Specify your gem's dependencies in rspec-puppet-facts-unsupported.gemspec
